@@ -19,3 +19,5 @@ TaskByID - This caters to
 * PUT /product/{product_id} - Update a product's name or price by id.
 * DELETE /product/{product_id} - Delete a product by id.
 
+## The test excercise is meant for a very basic api call test. Does not include modularised code for database creation/
+## initialisation/closing etc. Also the API Calls are not modularized. Just a very basic one with tests from Postman.

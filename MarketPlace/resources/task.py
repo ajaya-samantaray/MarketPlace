@@ -8,9 +8,7 @@ class Task(Resource):
         self.prd = mpdb.Product()
 
     def post(self):
-        logger.debug("Inside the post method of Task")
         request_data = request.get_json()
-        logger.debug(request_data)
         if self.prd.validProduct(request_data):
             self.prd.add_product(request_data['ProductCode'], request_data['Name'], request_data['Price'])
             response = Response("", 201, mimetype='application/json')
@@ -25,7 +23,6 @@ class Task(Resource):
             return response
 
     def get(self):
-        logger.debug("Inisde the get method of Task")
         return jsonify({'products': self.prd.get_all_products()})
         response = Response("", 200, mimetype='application/json')
         return response

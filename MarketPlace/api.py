@@ -7,5 +7,5 @@ app = Flask(__name__)
 
 restServerInstance = Api(app)
 
-restServerInstance.add_resource(Task,"/api/v1.0/task")
-restServerInstance.add_resource(TaskByID,"/api/v1.0/task/prdCd/<string:taskId>")
+restServerInstance.add_resource(Task,"/v1/products")
+restServerInstance.add_resource(TaskByID,"/v1/product/<string:taskId>")

@@ -11,7 +11,6 @@ class TaskByID(Resource):
         self.prd = mpdb.Product()
 
     def get(self,taskId):
-        logger.debug("Inisde the get method of TaskById. TaskID = {}".format(taskId))
         retVal = self.prd.get_product(taskId)
         if retVal:
             return jsonify(retVal)
@@ -19,9 +18,7 @@ class TaskByID(Resource):
             return {"message" : "No products found by ProductCode : {}".format(taskId)},404
 
     def put(self,taskId):
-        logger.debug("Inisde the put method of TaskByID. TaskID = {}".format(taskId))
         request_data = request.get_json()
-        logger.debug(request_data)
         retVal = self.prd.get_product(taskId)
         if retVal:
             if self.prd.validProduct(request_data):
@@ -33,7 +30,6 @@ class TaskByID(Resource):
             return {"message": "No products found by ProductCode : {}".format(taskId)}, 404
 
     def delete(self, taskId):
-        logger.debug("Inisde the delete method of TaskByID. TaskID = {}".format(taskId))
         retVal = self.prd.get_product(taskId)
         if retVal:
             self.prd.delete_product(taskId)
