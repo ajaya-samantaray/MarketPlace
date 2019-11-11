@@ -21,3 +21,5 @@ TaskByID - This caters to
 
 ## The test excercise is meant for a very basic api call test. Does not include modularised code for database creation/
 ## initialisation/closing etc. Also the API Calls are not modularized. Just a very basic one with tests from Postman.
+
+Testing the request calls and containerization is left to some other day this week.
